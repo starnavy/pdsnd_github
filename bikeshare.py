@@ -70,7 +70,36 @@ def time_stats(df):
         'popular_hour':popular_hour
         }
     return time_stats_dict
+
+
+def station_stats(df):
+    """Displays statistics on the most popular stations and trip.
+
+        Args:
+        (dataframe) df - Pandas DataFrame containing city data filtered by month and day
+    Returns:
+        (dict) station_stats_dict - popular start station/ end station/ route statistics
+    """
+    # display most commonly used start station
+    popular_start_station = df['Start Station'].mode()[0]
     
+    # display most commonly used end station
+    popular_end_station = df['End Station'].mode()[0]
+    
+    # display most frequent combination of start station and end station trip
+    df['route'] = df['Start Station'] + ';' + df['End Station']
+    popular_route = df['route'].mode()[0]
+    route_from = popular_route.split(';')[0]
+    route_end = popular_route.split(';')[1]
+
+    station_stats_dict = {
+        'popular_start_station': popular_start_station, 
+        'popular_end_station': popular_end_station, 
+        'route_from': route_from,
+        'route_end': route_end
+    }
+    return station_stats_dict
+
 
 def stats_calculator(city, month, day):
     start_time = time.time()
