@@ -15,3 +15,9 @@ This project built an interactive web app that employs Python backend calculate 
 - templates: html pages for this web app.
 
 - static/styles: css files.
+
+### Credits
+This is a Udacity project for Programming for Data Science with Python Nanodegree. 
+
+The data is from Divvy Bikes.
+
