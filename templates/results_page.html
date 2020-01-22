@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome on Board!</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+
+</head>
+<body>
+<!-- Header -->
+<header>
+  
+  <h1>Hi, {{ name }}</h1>
+  <h2>Now, Let's make sure what you want to explore:</h2>
+  <h4>In <em style="color:yellow"><u>{{ city }}, {{ month }}, {{ day}}</u></em>, here are the results:</h4>
+
+</header>
+
+
+<!-- Results section: travel time & duration -->
+  <section class="center">
+    <h1>Travel Time & Duration</h1>
+    <div class="stats">
+      <hr>
+      <h4>
+      Most common month is: <em style="color:rgb(84, 182, 237)">{{ stats_dict['popular_month'] }}</em>
+      </h4>
+    </div>
+    
+    <div class="stats">
+      <h4>
+      Most common day of week is: <em style="color:rgb(84, 182, 237)">{{ stats_dict['popular_day'] }}</em>
+      </h4>
+    </div>
+    
+    <div class="stats">
+      <h4>
+      Most common hour of day is: <em style="color:rgb(84, 182, 237)">{{ stats_dict['popular_hour'] }}</em>
+      </h4>
+    </div>
+    
+    <div class="stats">
+      <h4>
+      Total travel time is: 
+      <em style="color:rgb(84, 182, 237)">
+        {{ stats_dict['total_days'] }} days,
+        {{ stats_dict['total_hours'] }} hours,
+        {{ stats_dict['total_mins'] }} minutes,
+        and {{ stats_dict['total_secs'] }} seconds!</em>
+        </h4>
+    </div>
+    
+    <div class="stats">
+      <h4>
+      Average travel time is: 
+      <em style="color:rgb(84, 182, 237)">
+        {{ stats_dict['mean_mins'] }} minutes and
+        {{ stats_dict['mean_secs'] }} seconds! </em>
+      </h4>
+    </div>
+  </section>
+
+<!-- Results section: station & routes -->
+  <section class="center">
+    <h1>Station & Routes</h1>
+    <hr>
+    <div class="stats">
+      <h4>
+        Most common start station: 
+        <em style="color:rgb(84, 182, 237)">{{ stats_dict['popular_start_station'] }}</em>
+      </h4>
+    </div>
+    <div class="stats">
+      <h4>
+        Most common end station: 
+        <em style="color:rgb(84, 182, 237)">{{ stats_dict['popular_end_station'] }}</em>
+      </h4>
+    </div>
+    <div class="stats">
+      <h4>
+        Most common trip from start to end:
+        <em style="color:rgb(84, 182, 237)">from {{ stats_dict['route_from'] }} to {{ stats_dict['route_end'] }}</em>
+      </h4>
+    </div>
+  </section>
+
+
+<!-- Results section: travelers -->
+  <section class="center">
+    <h1>Travelers</h1>
+    <hr>
+    <div class="stats">
+      <h4>
+        Counts of each user type:
+        <br><br>
+        <em style="color:rgb(84, 182, 237)">
+          Subscribers: {{ stats_dict['subscribers'] }}
+          <br><br>
+          Customers: {{ stats_dict['customers'] }}
+        </em>
+      </h4>
+    </div>
+
+    <div class="stats">
+      <h4>
+        Counts of each gender (only available for NYC and Chicago)
+        <br><br>
+        <em style="color:rgb(84, 182, 237)">
+          Male: {{ stats_dict['male'] }}
+          <br><br>
+          Female: {{ stats_dict['female'] }}
+        </em>
+      </h4>
+      </h4>
+    </div>
+
+    <div class="stats">
+      <h4>Year of birth (only available for NYC and Chicago)
+        <br><br>
+        <em style="color:rgb(84, 182, 237)">
+          Earliest: {{ stats_dict['earliest_birth_year'] }}
+          <br><br>
+          Most recent: {{ stats_dict['most_recent_birth_year'] }}
+          <br><br>
+          Most popular: {{ stats_dict['popular_birth_year'] }}
+        </em>
+      </h4>
+    </div>
+    
+    
+  </section>
+
+  <hr>
+  <!-- Footer -->
+<footer>
+  <div clclass="center">
+    <h3 style="text-align: center;"> Do you want to explore one more time? </h3>
+    <a href="goodbye">
+      <button class="button">Not this time...</button>
+    </a>
+  
+
+    <a href="input">
+      <button class="button">Explore Again!</button>
+    </a>
+  </div>
+</footer>
+
+<section class="more trials">
+
+
+
+
+</section>
+
+
+</body>
+</html>

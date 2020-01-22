@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome on Board!</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+</head>
+<body>
+<!-- Header -->
+<header>
+  
+  <h1>Hello, there!</h1>
+
+  <h2>Before we start, let's know more about you and your interstes!</h2>
+
+  <p>
+    <em style="color:black">Note: You can choose the single city/month/day of week, 
+      <br><br>
+      or simply leave them blank and we will show you the statistics based on
+     all cities/months/days.</em>
+  </p>
+
+</header>
+
+<!-- User Filter -->
+<div class="center">
+  <form method="POST" action="">
+    
+    <h4>What should I call you?</h4> 
+    {{ form.user_name }} 
+    <br><br>
+    <h4>Choose your interested city:</h4>
+    {{ form.choose_cities }} 
+    <h4>Choose your interested month:</h4>
+    {{ form.choose_months }} 
+    <h4>Choose your interested day of week:</h4>
+    {{ form.choose_days }} 
+    <br><br>
+    {{ form.submit() }}
+  </form>
+</div>
+</body>
+</html>
