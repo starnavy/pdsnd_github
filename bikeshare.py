@@ -49,6 +49,29 @@ def load_data(city, month, day):
     return df
 
 
+def time_stats(df):
+    """Displays statistics on the most frequent times of travel.
+    
+    Args:
+        (dataframe) df - Pandas DataFrame containing city data filtered by month and day
+    Returns:
+        (dict) time_stats_dict - popular month/day of week/hour statistics
+    """
+    popular_month = df['month'].mode()[0]
+
+    popular_day = df['day_of_week'].mode()[0]
+
+    df['hour'] = df['Start Time'].dt.hour
+    popular_hour = df['hour'].mode()[0]
+
+    time_stats_dict = {
+        'popular_month':popular_month, 
+        'popular_day':popular_day, 
+        'popular_hour':popular_hour
+        }
+    return time_stats_dict
+    
+
 def stats_calculator(city, month, day):
     start_time = time.time()
 
