@@ -140,7 +140,46 @@ def trip_duration_stats(df):
         'mean_secs': int(mean_secs)
     }
     return trip_stats_dict
+
+
+def user_stats(df, check):
+    """Displays statistics on bikeshare users."""
+
+    # Display counts of user types
+    user_type = df['User Type'].value_counts()
+
+    if check:
+    # Display counts of gender
+        user_gender = df['Gender'].value_counts()
+        
+        # Display earliest, most recent, and most common year of birth
+        earliest_birth_year = df['Birth Year'].min()
+        most_recent_birth_year = df['Birth Year'].max()
+        popular_birth_year = df['Birth Year'].mode()[0]
     
+        user_stats_dict = {
+            'subscribers': user_type[0], 
+            'customers':user_type[1],
+            'male': user_gender[0],
+            'female': user_gender[1], 
+            'earliest_birth_year': int(earliest_birth_year), 
+            'most_recent_birth_year': int(most_recent_birth_year), 
+            'popular_birth_year': int(popular_birth_year)
+        }
+    else:
+            user_stats_dict = {
+            'subscribers': user_type[0], 
+            'customers':user_type[1], 
+            'male': 'N.A.', 
+            'female': 'N.A.', 
+            'user_gender': 'N.A.', 
+            'earliest_birth_year': 'N.A.', 
+            'most_recent_birth_year': 'N.A.', 
+            'popular_birth_year': 'N.A.'
+            }
+        
+    return user_stats_dict
+
 
 def stats_calculator(city, month, day):
     start_time = time.time()
