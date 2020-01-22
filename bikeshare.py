@@ -101,6 +101,19 @@ def station_stats(df):
     return station_stats_dict
 
 
+def convert_to_d_h_m_s(seconds):
+    """Return the tuple of days, hours, minutes and seconds.
+    The original function can be found in:
+    https://codereview.stackexchange.com/questions/120577/seconds-days-hours-minutes-and-seconds
+    """
+
+    minutes, seconds = divmod(seconds, 60)
+    hours, minutes = divmod(minutes, 60)
+    days, hours = divmod(hours, 24)
+
+    return days, hours, minutes, seconds
+
+
 def stats_calculator(city, month, day):
     start_time = time.time()
 
