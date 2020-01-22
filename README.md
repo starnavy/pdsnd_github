@@ -1,15 +1,6 @@
-### Date created
-Include the date you created this project and README file.
+### Project Date: 2020-01-22
 
-### Project Title
-Replace the Project Title
+### Project Title: Be Next Explorer!
 
-### Description
-Describe what your project is about and what it does
-
-### Files used
-Include the files used
-
-### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+### Project Description
+This project built an interactive web app that employs Python backend calculate bike sharing statistics for given city/month/day of week.
