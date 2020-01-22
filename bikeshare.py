@@ -114,6 +114,34 @@ def convert_to_d_h_m_s(seconds):
     return days, hours, minutes, seconds
 
 
+def trip_duration_stats(df):
+    """Displays statistics on the total and average trip duration.
+    
+    Args:
+        (dataframe) df - Pandas DataFrame containing city data filtered by month and day
+        df['Trip Duration']: in seconds
+    Returns:
+        (dict) trip_stats_dict - total/average travel time statistics
+    """
+    # display total travel time
+    total_travel_time = df['Trip Duration'].sum()
+    total_days, total_hours, total_mins, total_secs = convert_to_d_h_m_s(total_travel_time)
+
+    # display mean travel time
+    mean_travel_time = df['Trip Duration'].mean()
+    mean_days, mean_hours, mean_mins, mean_secs = convert_to_d_h_m_s(mean_travel_time)
+
+    trip_stats_dict = {
+        'total_days': int(total_days),
+        'total_hours': int(total_hours),
+        'total_mins': int(total_mins),
+        'total_secs': int(total_secs),
+        'mean_mins': int(mean_mins),
+        'mean_secs': int(mean_secs)
+    }
+    return trip_stats_dict
+    
+
 def stats_calculator(city, month, day):
     start_time = time.time()
 
