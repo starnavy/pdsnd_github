@@ -26,6 +26,10 @@ This is a Udacity project for Programming for Data Science with Python Nanodegre
 
 The data is from Divvy Bikes.
 
+The original convert_to_d_h_m_s(seconds) function can be found below:
+<https://codereview.stackexchange.com/questions/120577/seconds-days-hours-minutes-and-seconds>
+
+
 ### Requirements
 - Python 3.6.9
 - Flask-WTF==0.14.2
