@@ -13,6 +13,11 @@ This project built an interactive web app that employs Python backend calculate 
 - forms.py: transfer data between backend and frondend, therefore, allow users to input and transfer them back for processing and see the results that transferred back.
 
 - templates: html pages for this web app.
+	- homepage.html
+	- input_page.html
+	- confirmation_page.html
+	- results_page.html
+	- goodbye_page.html
 
 - static/styles: css files.
 
