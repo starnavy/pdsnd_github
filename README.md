@@ -26,3 +26,9 @@ This is a Udacity project for Programming for Data Science with Python Nanodegre
 
 The data is from Divvy Bikes.
 
+### Requirements
+- Python 3.6.9
+- Flask-WTF==0.14.2
+- Flask==1.1.1
+- numpy==1.18.1
+- pandas==0.25.3
